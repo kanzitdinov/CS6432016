@@ -27,27 +27,23 @@ var accountSid = 'AC730072f510341b8e630a68dc2b400f80';
 var authToken = 'db0884fabd970e29b3c00973f6d71b89';
 var client = require('twilio')(accountSid, authToken);
 
-app.get('/sendMessageTo/:number', function(req, res) {
-  var number_to_check = '+19173624040'
-  var number = req.params.number;
+app.get('/sendMessage', function(req, res) {
+  // var number_to_check = '+19292168151'
+  var number = '+19292168151';
 
   console.log(number);
 
-  if (number == number_to_check) {
-    client.messages.create({
-    	from: "+19177464171",
-      to: number,
-      body: "Hello from Batyr Kanzitdinov 🙂"
-    }, function(err, message) {
-    	if(err) {
-        console.error(err.message);
-      } else {
-        res.send(`Message is sent to ${number}`);
-      }
-    });
-  } else {
-    res.send(`Number ${number} is not ${number_to_check}`);
-  }
+  client.messages.create({
+    from: "+19177464171",
+    to: number,
+    body: "Hello from Batyr Kanzitdinov 🙂"
+  }, function(err, message) {
+    if(err) {
+      console.error(err.message);
+    } else {
+      res.send(`Message is sent to ${number}`);
+    }
+  });
 
 })
 
