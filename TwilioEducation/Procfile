@@ -1,1 +1,1 @@
-web: node education.js
+web: ./node_modules/.bin//babel-node education.js

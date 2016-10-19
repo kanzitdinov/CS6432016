@@ -29,8 +29,8 @@ app.post('/waeducation', function(req, res) {
 
     // TODO: ALSO SAVE IN DATABASE TO GET RESULTS FASTER
 
-    //console.log(msgFrom);
-    //console.log(msgBody);
+    console.log(msgFrom);
+    console.log(msgBody);
 
     var query = msgBody.trim();
     var resultString = '';
@@ -68,7 +68,7 @@ app.post('/waeducation', function(req, res) {
           });
 
       })
-      
+
   } else {
 
     myLog(`Can't make a request with -> ${msgBody}`, res)
